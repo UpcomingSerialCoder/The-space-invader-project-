@@ -1,24 +1,4 @@
-//#include<SFML/Graphics.hpp>
-//#include<iostream>
-//#include "Game.h"
-//#include<vector>
-//using namespace sf;
-//using namespace std;
-//int main()
-//{
-//    srand(time(NULL));
-//    Game game1;
-//    while (game1.GAMERUNNING())
-//    {
-//        game1.update();
-//        game1.render();
-//    }
-//return 0;
-//}
 
-////////////////////////////////////////////////////////////
-// Headers
-////////////////////////////////////////////////////////////
 #include <SFML/Graphics.hpp>
 #include <algorithm>
 #include <sstream>
@@ -59,7 +39,7 @@ void updateenemies(RenderWindow &appWindow,Vector2i MousePosWindow, Vector2f Mou
     when he clicks 'd' , he moves to the right 
     when he clicks "Space" button , he shoots a ray 
     when the globalbounds the body contains the ray , it gets erased, and the user gets points for that
-
+    [advanced add] make the last row of the vector shoots ray back , as a part of the fun :)
     
     */
     MousePosWindow = Mouse::getPosition(appWindow);
@@ -81,10 +61,7 @@ int main() {
     v = fillthemonters();
     Vector2i MousePosWindow;// Vector2i because it holds 2 integer , if it should hold 2 floats , make it 2f
     Vector2f MousePosView;
-    bool mouseheld = false;
-    bool deleted = true;
     Event eve;
-
     while (appWindow.isOpen()) {
         while (appWindow.pollEvent(eve)) {
             if (eve.type == Event::Closed) appWindow.close();
@@ -97,6 +74,5 @@ int main() {
         updateenemies(appWindow, MousePosWindow, MousePosView, v);
         appWindow.display();
     }
-
 }
 
