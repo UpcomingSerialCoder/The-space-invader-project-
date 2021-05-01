@@ -52,6 +52,16 @@ vector<RectangleShape> fillthemonters()
     return answer;
 }
 void updateenemies(RenderWindow &appWindow,Vector2i MousePosWindow, Vector2f MousePosView,vector<RectangleShape>v) {
+    /*
+    -This function kills the enemies by pressing on them . 
+    -To Do later : 
+    make the user as a space ship , when he clicks 'a' he moves to the left 
+    when he clicks 'd' , he moves to the right 
+    when he clicks "Space" button , he shoots a ray 
+    when the globalbounds the body contains the ray , it gets erased, and the user gets points for that
+
+    
+    */
     MousePosWindow = Mouse::getPosition(appWindow);
     MousePosView = appWindow.mapPixelToCoords(MousePosWindow);
     if (Mouse::isButtonPressed(Mouse::Left))
